@@ -1,3 +1,7 @@
+/**
+ * @OnlyCurrentDoc
+ */
+
 function doPost(params) {
 
   const query = params.parameter.query
@@ -13,9 +17,9 @@ function doPost(params) {
     fullMatch : false,
     caseSensitive : false,
     columnKeys : {
-      'code' : 1,
-      'name' : 2,
-      'description' : 3
+      code : 1,
+      name : 2,
+      description : 3
     }
   })
 
