@@ -1,0 +1,62 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Google Apps Script API
+  description: >
+    This API retrieves product descriptions based on code
+  license:
+    name: MIT
+servers:
+  - url: https://script.google.com/macros/s/AKfyc...jt1_Iw
+paths:
+  /exec:
+    post:
+      summary: Retrieve product details based on product code
+      operationId: findProductsByCode
+      parameters:
+      - in: query
+        name: query
+        schema:
+          type: string
+          minLength : 3
+        required: true
+        description: Code to look up products. Performs a partial match. Minimum of 3 characters
+      responses:
+        '200':
+          description: Found products
+          content:
+            application/json:
+              schema:
+                type: object
+                properties :
+                  total:
+                    type: number
+                    description : Total number of that match the provided code
+                  entries:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                          example: "A123"
+                        name:
+                          type: string
+                          example: "Example Name"
+                        description:
+                          type: string
+                          example : "Product A123 is very awesome"
+        '400':
+          description: Missing parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+                example:
+                  status: error
+                  message: Missing parameters
