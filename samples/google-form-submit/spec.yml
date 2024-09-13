@@ -1,0 +1,84 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Google Apps Script API
+  description: >
+    This API submits a Google Form with customer information
+  license:
+    name: MIT
+servers:
+  - url: https://script.google.com/macros/s/AKfyc...jt1_Iw
+paths:
+  /exec:
+    post:
+      summary: Submit a Google Form collecting customer's information
+      operationId: submitForm
+      requestBody:
+        description: Fields to be submitted with the form
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - 'Full Name'
+                - 'Email'
+              properties:
+                'Full Name':
+                  type: string
+                  description: Customer's full name
+                'Email':
+                  type: string
+                  description: Customer's email
+                'Gender':
+                  type: string
+                  description: Customer's gender
+                'Type of Customer':
+                  type: string
+                  description: New or existing customer
+                  enum:
+                    - 'New'
+                    - 'Existing'
+                'Address':
+                  type: string
+                  description: Customer's address
+                'Email Preferences':
+                  type: array
+                  items:
+                    type: string
+                    enum:
+                      - 'Deals and Promotions'
+                      - 'Announcements'
+                  description: Customer's email preferences
+                'Birthday':
+                  type: string
+                  format: date
+                  description: Customer's birthday
+                'Preferred Delivery Time':
+                  type: array
+                  items:
+                    type: number
+                  minItems: 2
+                  maxItems: 2
+                  description: Customer's preferred delivery time
+      responses:
+        '200':
+          description: Form submitted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties :
+                  submitted:
+                    type: boolean
+                    description: Form submitted status
+                  timestamp:
+                    type: string
+                    format: date-time
+                    description: Form submitted time
+                  id:
+                    type: string
+                    description: ID of the submitted response
+                  error:
+                    type: string
+                    description: Form submission error
