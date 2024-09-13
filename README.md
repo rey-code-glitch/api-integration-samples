@@ -23,12 +23,15 @@ to modify the file.
 This file must be publicly accessible in its raw format. Here's how to host it on GitHub Gist:
 1. Create a new gist.
 2. Enter a file name, making sure to use the .yml extension.
-3. Copy the contents of `spec.yml` into the gist. Update the value of servers.urls
-with the URL copied from the Google App Script (Web App URL). You can edit and test
-your spec using an online spec editor like [Swagger](https://editor.swagger.io/).
-4. Click `Create`.
-5. Click `Raw`.
-6. Copy the raw file URL.
+3. Copy the contents of `spec.yml` into the gist.
+4. Update the value of servers.urls with the URL copied from the Google App Script
+(Web App URL). Remove `/exec` from the end of the URL, it should already be included
+in `paths`.
+5. You can edit and test your spec using an online spec editor like
+[Swagger](https://editor.swagger.io/).
+6. Click `Create`.
+7. Click `Raw`.
+8. Copy the raw file URL.
 
 ### Adding the API Tool in AI Assist
 
