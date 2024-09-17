@@ -55,11 +55,8 @@ paths:
                   format: date
                   description: Customer's birthday
                 'Preferred Delivery Time':
-                  type: array
-                  items:
-                    type: number
-                  minItems: 2
-                  maxItems: 2
+                  type: string
+                  format: date-time
                   description: Customer's preferred delivery time
       responses:
         '200':

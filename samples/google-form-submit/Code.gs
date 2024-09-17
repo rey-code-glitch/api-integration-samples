@@ -109,14 +109,12 @@ function getItemResponse(item, value) {
       return item.createResponse(date);
 
     case 'TIME':
-      if (!Array.isArray(value)) {
-        return null;
-      }
-      if (!value.every(i => Number.isInteger(i))) {
+      let time = new Date(value);
+      if (time === 'Invalid Date') {
         return null;
       }
       item = item.asTimeItem();
-      return item.createResponse(value[0], value[1]);
+      return item.createResponse(time.getHours(), time.getMinutes());
 
     default:
       return null;
