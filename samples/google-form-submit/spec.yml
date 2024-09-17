@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 info:
   version: 1.0.0
-  title: Google Apps Script API
+  title: Google Form Submit API
   description: >
     This API submits a Google Form with customer information
   license:

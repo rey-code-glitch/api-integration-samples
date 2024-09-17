@@ -8,15 +8,18 @@ functionality, these examples will help you get started quickly and easily.
 
 ### Creating a Google App Script
 
-1. In Google Sheets, click `Extensions -> Apps Script` to create a script.
-2. Copy the sample code from `Code.gs`.
-3. Modify any parameters to fit your requirements.
-4. Deploy the script by selecting `Deploy -> New Deployment`.
-5. Under `Execute As`, select `Me` to ensure the script has the correct permissions
+There are different methods to access Google App Script from your document
+- In Google Sheets, click `Extensions -> Apps Script`
+- In Google Form, click the triple dot menu icon and click `Script editor`
+
+1. Copy the sample code from `Code.gs`.
+2. Modify any parameters to fit your requirements.
+3. Deploy the script by selecting `Deploy -> New Deployment`.
+4. Under `Execute As`, select `Me` to ensure the script has the correct permissions
 to modify the file.
-6. Under `Who has access`, select `Anyone` to allow AI Assist to call the Web App.
-7. Click Deploy.
-8. Copy and save the Web App URL. Note that a new URL is generated with each deployment.
+5. Under `Who has access`, select `Anyone` to allow AI Assist to call the Web App.
+6. Click Deploy.
+7. Copy and save the Web App URL. Note that a new URL is generated with each deployment.
 
 ### Creating a spec YAML File
 
