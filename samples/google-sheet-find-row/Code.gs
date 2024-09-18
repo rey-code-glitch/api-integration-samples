@@ -37,7 +37,7 @@ function doPost(params) {
  * @param {Object} params
  * @param {number} params.searchColumnIndex Number of column to search (column numbering starts from 1)
  * @param {string} params.query Query to search for
- * @param {string} params.limit Number of entries to return.
+ * @param {number} params.limit Number of entries to return.
  * @param {boolean} params.headerRow Whether data includes header row
  * @param {boolean} params.fullMatch Should a full match be performed.
  * @param {boolean} params.caseSensitive Whether to match in sensitive manner,
