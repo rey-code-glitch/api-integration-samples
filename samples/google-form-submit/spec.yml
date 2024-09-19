@@ -33,6 +33,9 @@ paths:
                 'Gender':
                   type: string
                   description: Customer's gender
+                  enum:
+                    - 'Male'
+                    - 'Female'
                 'Type of Customer':
                   type: string
                   description: New or existing customer
